@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FBF8F3;
+    --bg-secondary: #F5EFE6;
+    --bg-darker: #F0E8DC;
+    --text-primary: #3B2F2A;
+    --text-secondary: #7A6A60;
+    --gold-base: #C9A24B;
+    --gold-light: #E8D08A;
+    --gold-dark: #9C7A2E;
+    --rose-soft: #E9C7C3;
+    --rose-light: #F3DEDA;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Metallic Gold text gradient */
+.gold-text {
+  background: linear-gradient(135deg, #9C7A2E 0%, #E8D08A 30%, #C9A24B 55%, #F3E3A6 75%, #9C7A2E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Fine Gold gradient divider line */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201, 162, 75, 0.4) 20%, rgba(232, 208, 138, 0.9) 50%, rgba(201, 162, 75, 0.4) 80%, transparent 100%);
+}
+
+.gold-line-solid {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 162, 75, 0.2) 0%, rgba(201, 162, 75, 0.6) 50%, rgba(201, 162, 75, 0.2) 100%);
+}
+
+/* Gold Metallic Button with subtle shimmer on hover */
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #C9A24B 0%, #E8D08A 45%, #C9A24B 100%);
+  color: #2F241F;
+  font-weight: 600;
+  box-shadow: 0 4px 15px -3px rgba(201, 162, 75, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.btn-gold:hover::before {
+  left: 150%;
+  transition: left 0.85s ease-in-out;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -4px rgba(201, 162, 75, 0.45);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Luxury Secondary Button */
+.btn-gold-secondary {
+  border: 1px solid rgba(201, 162, 75, 0.6);
+  background-color: transparent;
+  color: #3B2F2A;
+  transition: all 0.3s ease;
+}
+
+.btn-gold-secondary:hover {
+  background-color: rgba(201, 162, 75, 0.08);
+  border-color: #C9A24B;
+  color: #201713;
+  transform: translateY(-2px);
+}
+
+/* Luxury Glass / Soft Card */
+.luxury-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 162, 75, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(59, 47, 42, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 162, 75, 0.45);
+  box-shadow: 0 16px 36px -8px rgba(201, 162, 75, 0.15);
+}
+
+/* Frosted Glass Floating Card */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 75, 0.3);
+  box-shadow: 0 12px 28px -6px rgba(59, 47, 42, 0.1);
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle WhatsApp float pulse */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px -4px rgba(201, 162, 75, 0.45);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 14px 30px -2px rgba(201, 162, 75, 0.65);
+  }
+}
+
+.animate-float-pulse {
+  animation: softPulse 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-float-pulse,
+  .btn-gold::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

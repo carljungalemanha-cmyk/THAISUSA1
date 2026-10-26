@@ -1,0 +1,323 @@
+construa um site institucional e de conversão (one-page, rolagem suave) para o Studio Thais Braga, seguindo este documento ao pé da letra. Entregue HTML + CSS + JavaScript (ou React + Tailwind), 100% responsivo (mobile first), com alternância PT/EN, animações sutis e todas as seções abaixo, na ordem indicada. Todo o texto de cada seção já está escrito aqui (copy pronta): use-o, não invente informações novas.
+1. Visão geral
+• Marca: Thais Braga | Cílios e Curso (Instagram: @studio_thaisbraga)
+• Posicionamento: Lash Designer premiada, mentora e referência em extensão de cílios em Newark, NJ.
+• Tagline: Máster em Extensão de Cílios 🎓 · Mentora e especialista em carreira Lash 🦋
+• Objetivos do site:
+    1. Gerar agendamentos de serviços via WhatsApp (objetivo principal).
+    2. Vender o curso/mentoria "Lash Designer de Sucesso" (direciona ao site do curso).
+    3. Construir autoridade (prêmio, certificações, depoimentos, galeria).
+    4. Levar o visitante a seguir o Instagram.
+• Público: mulheres (principalmente brasileiras e latinas) em Newark/NJ que buscam cílios e sobrancelhas; e mulheres que desejam entrar na carreira de Lash Designer.
+• Idiomas: Português (padrão) e Inglês, com seletor PT | EN no cabeçalho. Toda a copy deve ter versão em inglês (traduzir fielmente, tom premium e acolhedor).
+2. Links e dados fixos
+Item
+Valor
+WhatsApp (todos os botões de agendar)
++1 (862) 955-8236 → https://wa.me/18629558236
+Botão da mentoria (somente nela)
+https://studiothaisbraga.com/ (abrir em nova aba)
+Instagram
+https://www.instagram.com/studio_thaisbraga/
+Endereço
+269 Oliver St, Newark, NJ 07105, EUA
+Google Maps (embed + botão "Como chegar")
+coordenadas 40.7226175, -74.1613837; link: https://www.google.com/maps/place/269+Oliver+St,+Newark,+NJ+07105,+EUA/@40.7226175,-74.1635724,17z
+Regra de botões: todo botão "Agendar" / "Quero agendar" abre https://wa.me/18629558236?text= com mensagem pré-preenchida em PT ou EN conforme o idioma ativo. A única exceção é o botão da seção da mentoria ("Garantir minha vaga"), que vai para https://studiothaisbraga.com/.
+3. Identidade visual
+Sensação: luxo delicado, feminino, sofisticado, editorial, muito respiro (espaços em branco generosos).
+Paleta
+• Fundo principal: bege claro quase branco #FBF8F3 (alternar com #F5EFE6 para dar ritmo entre seções)
+• Texto principal: marrom suave #3B2F2A; secundário #7A6A60
+• Dourado: #C9A24B base, #E8D08A brilho, #9C7A2E sombra
+• Rosa elegante sutil (apenas detalhes: bordas, ícones, selos, hover): #E9C7C3 e #F3DEDA
+• Cards: branco #FFFFFF com borda fina dourada translúcida e sombra muito suave
+Efeito dourado (obrigatório): criar uma classe .gold-text e .gold-line com gradiente metálico, por exemplo linear-gradient(135deg,#9C7A2E 0%,#E8D08A 30%,#C9A24B 55%,#F3E3A6 75%,#9C7A2E 100%) aplicado com background-clip:text nos títulos de destaque e nos botões, com um brilho (shimmer) lento passando no hover. Divisores dourados finos com gradiente.
+Tipografia (Google Fonts)
+• Títulos: Cormorant Garamond ou Playfair Display (serifada elegante, itálico para destaques)
+• Corpo e botões: Montserrat ou Jost (leve, 300–500)
+• Subtítulos pequenos: caixa alta, espaçamento de letras amplo (letter-spacing 0.2em)
+Símbolo de cílio (sutil): criar um ícone SVG de cílios/olho minimalista em dourado fino. Usar: ao lado do logotipo no cabeçalho, como divisor entre seções, como marca d'água muito transparente (opacidade 5–8%) no fundo do hero e como "bullet" das listas. Nunca poluir.
+Componentes
+• Botão primário: dourado metálico, texto marrom escuro ou branco, cantos arredondados (pill), sombra suave, ícone do WhatsApp.
+• Botão secundário: contorno dourado, fundo transparente.
+• Cards: raio 20px, borda 1px dourada a 30% de opacidade, hover com leve elevação.
+• Animações: fade-in + slide-up ao rolar (IntersectionObserver), parallax leve no hero. Respeitar prefers-reduced-motion.
+4. Estrutura global
+Cabeçalho (fixo, translúcido com blur): logotipo (símbolo de cílio + "Thais Braga" em serifa dourada) · menu (Início, Serviços, Galeria, Sobre, Mentoria, Local, Agendar, FAQ) · seletor PT | EN · botão "Agendar" (WhatsApp). No mobile: menu hambúrguer em tela cheia, seletor de idioma sempre visível.
+Botão flutuante de WhatsApp (canto inferior direito, dourado, pulso suave) em todas as telas.
+Ordem das seções: 1 Hero · 2 Serviços · 3 Galeria · 4 Sobre a profissional (+ Instagram) · 5 Mentoria/Curso · 6 Feedbacks · 7 Local/Studio · 8 Agendamento · 9 FAQ · 10 Rodapé.
+Cada seção tem: etiqueta pequena, título impactante, subtítulo, conteúdo e botão de agendar (exceto a mentoria, que usa o link do curso, e o rodapé).
+5. Seções (copy pronta)
+5.1 Hero (primeira dobra)
+• Etiqueta: Máster em Extensão de Cílios · Newark, NJ
+• Título (H1): Seu olhar merece ser inesquecível.
+• Subtítulo: Extensão de cílios, design de sobrancelhas e cuidado com cada detalhe, feitos por quem transforma olhares e vidas há mais de 9 anos.
+• Botões: [Agendar meu horário] (WhatsApp) · [Conhecer a mentoria] (rola até a seção 5.5)
+• Foto dela (lado direito no desktop, abaixo do texto no mobile, moldura em arco com borda dourada): https://i.ibb.co/pj8Hv1dM/527245827-18182334562322314-654052260932165804-n-convertido-de-jpg.webp
+• Cards flutuantes sobre/abaixo da foto (3 a 4, estilo vidro fosco):
+    1. 🏆 Premiada Lash Designer Empreendedora 2023
+    2. 🎓 Máster em Extensão de Cílios
+    3. ✨ +9 anos de experiência em beleza
+    4. 🦋 Mentora de novas Lash Designers
+5.2 Serviços
+• Etiqueta: Serviços
+• Título: Cada olhar, uma assinatura.
+• Subtítulo: Escolha o estilo que combina com a sua essência. Eu cuido do resto, com técnica, delicadeza e acabamento impecável.
+• Layout: três grupos com título, frase de abertura e cards. Cada card: ícone/foto pequena, nome, descrição, valor. Usar abas ou subtítulos grandes para separar os grupos. Botão "Agendar este serviço" em cada card, que abre o WhatsApp já com o nome do serviço na mensagem.
+👁️ Extensão de Cílios
+"Transforme seu olhar e sinta-se maravilhosa todos os dias!"
+Cards com três valores cada (1ª Aplicação · Manutenção de 2 semanas · Manutenção de 3 semanas), exibidos em mini tabela dentro do card:
+Serviço
+Descrição
+1ª Aplicação
+2 semanas
+3 semanas
+Volume Clássico
+Ideal para quem busca um efeito natural e delicado!
+R$ 100
+R$ 65
+R$ 75
+Volume Brasileiro
+Discreto e elegante, perfeito para o dia a dia!
+R$ 110
+R$ 70
+R$ 80
+Volume Light
+Leveza e naturalidade para um olhar suave todos os dias! (sugestão de texto, pois a descrição enviada estava repetida)
+R$ 110
+R$ 70
+R$ 80
+Volume Egípcio
+Inspiração em olhares misteriosos e sedutores!
+R$ 115
+R$ 75
+R$ 85
+Volume Sirena
+Cílios com efeito degradê que hipnotizam!
+R$ 110
+R$ 75
+R$ 85
+Volume Fox
+O olhar puxado que encanta!
+R$ 120
+R$ 80
+R$ 90
+Volume Wispy
+Textura única para um olhar diferenciado!
+R$ 120
+R$ 80
+R$ 90
+Volume Russo
+Para quem ama impacto e glamour!
+R$ 130
+R$ 85
+R$ 95
+🤎 Sobrancelha
+"Porque sobrancelhas perfeitas fazem toda a diferença!"
+Serviço
+Descrição
+Valor
+Designer de Sobrancelha
+Limpeza e alinhamento para realçar o formato natural
+R$ 20,00
+Designer com Henna
+Preenchimento e definição com longa duração
+R$ 35,00
+Brow Lamination
+Sobrancelhas alinhadas e volumosas com efeito natural
+R$ 70,00
+💋 Cílios e Lábios
+"Realce sua beleza natural."
+Serviço
+Descrição
+Valor
+Lash Lifting
+Cílios curvados e destacados, sem extensões!
+R$ 85,00
+Hidragloss
+Tratamento labial profundo
+R$ 65,00
+• Observação (nota de rodapé da seção): Valores sujeitos a alteração. Cílios com mais de 3 semanas são cobrados como 1ª aplicação.
+• Botão final: [Quero agendar meu horário]
+• Implementação: manter os preços em um único arquivo/objeto de dados (JSON) para facilitar a edição futura, inclusive a moeda.
+5.3 Galeria
+• Etiqueta: Galeria
+• Título: Olhares que contam histórias.
+• Subtítulo: Cada trabalho é pensado para valorizar o formato dos olhos e a personalidade de quem senta na minha cadeira.
+• Layout: grade masonry elegante (2 colunas no mobile, 3 a 4 no desktop), cantos arredondados, hover com leve zoom e brilho dourado; clique abre lightbox com navegação (setas, swipe, fechar com ESC).
+• Fotos (8):
+    1. https://i.ibb.co/sJwNP2jj/Save-Clip-App-540759101-18184636594322314-4295567144239371594-n.webp
+    2. https://i.ibb.co/JRzz0h6z/Save-Clip-App-499876112-18174866023322314-5938040367293096446-n.webp
+    3. https://i.ibb.co/gbkhqDb0/Save-Clip-App-481822213-18167533372322314-5535984661507270351-n.webp
+    4. https://i.ibb.co/DfYR3N6c/Save-Clip-App-840418905-18229634053322314-3684551265117667453-n-convertido-de-jpg.webp
+    5. https://i.ibb.co/6JFzpTkc/Save-Clip-App-566967945-18191771356322314-12907103959612794-n-convertido-de-jpg.webp
+    6. https://i.ibb.co/bRCKTdTs/Save-Clip-App-858088404-18230618314322314-2216797133741016227-n-convertido-de-jpg.webp
+    7. https://i.ibb.co/xKLqckbD/Save-Clip-App-775243996-18224099455322314-3653330432995892578-n-convertido-de-jpg.webp
+    8. https://i.ibb.co/b5RdWCCq/Save-Clip-App-808284982-18227608273322314-1639686223512452624-n.webp
+• Botão: [Quero um olhar assim]. Texto "alt" descritivo em todas as imagens.
+5.4 Sobre a profissional
+• Etiqueta: Conheça a Thais
+• Frase em destaque (entre aspas, serifa itálica dourada): "Cuidar do olhar é cuidar de quem você é."
+• Título: Thais Braga, a mulher por trás de cada olhar.
+• Subtítulo: Do Espírito Santo para Newark, uma história de coragem, recomeço e transformação.
+• Foto dela (moldura com borda dourada): usar a imagem do post https://www.instagram.com/p/DTbcSMcldSu/ (o link enviado estava cortado; ver seção 9: precisamos da URL direta da imagem. Enquanto isso, usar a foto do hero como substituta.)
+Parágrafo 1 (emocional): Há seis anos, eu comecei do zero em um país novo, longe de casa, com muita coragem e um sonho. Os cílios mudaram a minha vida, e hoje eu vejo o mesmo acontecer com cada mulher que passa pelo meu studio. Aqui, a gente não faz só cílios: devolvemos autoestima, criamos um momento de pausa e cuidado, e fazemos você se olhar no espelho e se sentir ainda mais você. Cada atendimento é pensado com carinho, porque quando uma mulher se sente bonita, ela se transforma por inteiro.
+Parágrafo 2 (técnico): Sou formada em estética e cosmética, com mais de 9 anos de atuação na área da beleza, certificações brasileiras e internacionais e formação em Mentoria High Ticket para empreendedoras. Faço mapping personalizado para cada formato de olho, trabalho com isolamento rigoroso, materiais de qualidade e foco em saúde ocular e durabilidade. Em 2023, fui premiada na categoria Lash Designer Empreendedora pela America Star Magazine, e este ano sou embaixadora do Swiss Beauty Experience nos Estados Unidos.
+Cards de credenciais (4 a 6, com ícone dourado):
+• 🏆 Premiada em 2023, Lash Designer Empreendedora (America Star Magazine)
+• 🎓 Formada em Estética e Cosmética
+• 🌍 Certificações brasileiras e internacionais
+• 💼 Formada em Mentoria High Ticket para empreendedoras
+• 🎤 Mentora, palestrante e embaixadora Swiss Beauty Experience (EUA)
+• 🦋 +9 anos na área da beleza
+Linha do tempo curta e elegante (opcional): 2016 primeiro curso de cílios · 2017 início do zero nos EUA, atendendo a domicílio · 2023 prêmio America Star Magazine · Hoje studio próprio e curso.
+Subseção: Vem ser minha amiga no Instagram
+• Título: Vem acompanhar a minha rotina.
+• Subtítulo: Bastidores, transformações, dicas e muito carinho, todos os dias no @studio_thaisbraga.
+• Reels integrado, sem capa/legenda: https://www.instagram.com/reel/Deh7RG5zPn5/ (ver implementação do embed na seção 8).
+• Botão: [Seguir @studio_thaisbraga] → link do Instagram.
+5.5 Mentoria / Curso "Lash Designer de Sucesso"
+• Etiqueta: Mentoria e Curso presencial · Newark, NJ
+• Título: Lash Designer de Sucesso: a sua nova carreira começa aqui.
+• Subtítulo: Aprenda seis técnicas de extensão de cílios em 2 dias e comece a atender com confiança, do natural ao mais impactante.
+• Foto (destaque lateral): https://i.ibb.co/qLt4gY0P/Improve-photo-quality-and-remove-2-K-20261024084236.webp
+• Botão (destaque dourado): [Garantir minha vaga] → https://studiothaisbraga.com/ (nova aba). Único botão do site que não vai ao WhatsApp.
+Faixa infinita (marquee) em dourado, rolando devagar: EXTENSÃO DE CÍLIOS ✦ CLÁSSICO ✦ BRASILEIRO ✦ EGÍPCIO ✦ 3D ✦ 4D ✦ BROWN ✦ (repetir em loop contínuo, pausa no hover).
+Bloco "Sobre o curso": Você vai aprender do zero, com acolhimento e prática de verdade: em apenas dois dias, domina seis técnicas essenciais, treinando em esponja e boneca e depois aplicando em modelo. Turmas pequenas de até 4 pessoas ou sessões VIP, para um aprendizado feito sob medida para você.
+Cards das 6 técnicas: Volume Clássico · Volume Brasileiro · 3D · 4D · Volume Egípcio · Volume Brown
+Cards de formato (ícones):
+• 2 dias, 7h por dia
+• Aulas teóricas e práticas
+• Treino em esponja e boneca
+• Aplicação em modelo real
+• Turma de até 4 pessoas ou VIP
+O que você vai aprender (resumido, em 3 colunas com ícone de cílio):
+• Fundamentos e saúde: função e ciclo de vida dos cílios, saúde e doenças oculares, irritação e alergia.
+• Técnica: fios sintéticos, adesivos, umidade e temperatura, camadas, isolamento, mapping e passo a passo completo.
+• Rotina profissional: remoção química e mecânica, manutenção, durabilidade, cuidados, materiais e ferramentas.
+O curso inclui: kit de material personalizado · apostila · certificado · coffee break · 6 meses de assistência pós-curso.
+Bônus (destaque com selo dourado/rosa): como atrair clientes · como ter boa retenção · técnicas de fotos · fios marrons · um dia no studio comigo, para acompanhar meus atendimentos e tirar dúvidas.
+Fechamento da seção (frase acolhedora): "Você não precisa ter experiência. Precisa apenas de vontade de começar." + botão [Garantir minha vaga].
+Carrossel infinito de fotos (clique para expandir em lightbox, autoplay lento, arrastar no mobile, pausa no hover):
+1. https://i.ibb.co/PG7jBgrR/Save-Clip-App-858088425-18230546068322314-703888666509887022-n.webp
+2. https://i.ibb.co/j9QMmGmV/Save-Clip-App-825323746-18228254752322314-322839167794412293-n.webp
+3. https://i.ibb.co/9kt6WdWn/Save-Clip-App-809543391-18226878469322314-8935497811955384705-n.webp
+4. https://i.ibb.co/v6HrDX2h/Save-Clip-App-757563411-18221651248322314-8430886763489132940-n.webp
+5. https://i.ibb.co/JjBcX6Yr/Save-Clip-App-747718822-18220273249322314-8309868645911816255-n.webp
+6. https://i.ibb.co/21h8x9d4/Save-Clip-App-735170267-18218416567322314-8875759537842288013-n.webp
+Reels integrado do Instagram (sem capa): https://www.instagram.com/reel/DeP7s3ATF-4/
+5.6 Feedbacks
+• Etiqueta: Depoimentos
+• Título: Quem senta na cadeira, se apaixona.
+• Subtítulo: Palavras de quem confiou o olhar e a carreira à Thais.
+• Layout: carrossel de cards com 5 estrelas douradas, aspas grandes em dourado, nome e serviço (cliente ou aluna). Mostrar 3 no desktop e 1 no mobile, com setas e bolinhas.
+• Textos de exemplo (substituir por depoimentos reais antes de publicar):
+    1. "Saí do studio me sentindo outra mulher. Os cílios ficaram leves, naturais e duraram muito!" — Cliente, Volume Brasileiro
+    2. "Atendimento acolhedor, ambiente lindo e um cuidado que a gente sente em cada detalhe." — Cliente, Volume Egípcio
+    3. "Fiz o curso do zero e saí segura para atender. A Thais ensina com paixão e muita paciência." — Aluna, Lash Designer de Sucesso
+    4. "Minhas sobrancelhas nunca estiveram tão alinhadas e naturais. Recomendo demais!" — Cliente, Brow Lamination
+    5. "O acompanhamento depois do curso fez toda a diferença para começar a minha carreira." — Aluna
+• Botão: [Quero viver essa experiência]
+• Implementação: depoimentos em arquivo de dados para troca fácil por prints/textos reais.
+5.7 Local / Studio
+• Etiqueta: O Studio
+• Título: Um espaço pensado para você relaxar.
+• Subtítulo: Conforto, higiene e tecnologia em Newark, NJ, para uma experiência de cuidado do começo ao fim.
+• Logo: https://i.ibb.co/tRLxxwc/Center-logo-on-white-background-2-K-20261024091151.webp (em destaque, fundo claro, com moldura dourada fina)
+• Reels integrado do espaço (sem capa): https://www.instagram.com/p/DYai_nezU0l/
+• Cards de diferenciais (ícone dourado):
+    ◦ 🔒 Segurança: ambiente reservado e tranquilo
+    ◦ 📍 Fácil acesso: localização central em Newark, NJ
+    ◦ 🛋️ Conforto: maca confortável, ambiente climatizado e acolhedor
+    ◦ 💡 Tecnologia: equipamentos e materiais modernos de alta qualidade
+    ◦ 🧼 Higiene: materiais esterilizados e protocolos rigorosos
+    ◦ 🎀 Experiência: atendimento exclusivo, no seu tempo
+• Mapa: Google Maps embutido (iframe) do endereço 269 Oliver St, Newark, NJ 07105, bordas arredondadas, filtro suave. Abaixo, endereço em texto e botões: [Como chegar] (abre o Google Maps em nova aba) e [Agendar horário] (WhatsApp).
+5.8 Agendamento
+• Etiqueta: Agende seu horário
+• Título: Seu momento de cuidado está a um clique.
+• Subtítulo: Preencha em menos de um minuto e finalize a conversa direto comigo no WhatsApp.
+Orientações e regras de atendimento (4 cards curtos, ícone dourado, lado a lado no desktop):
+• ⏰ Pontualidade: chegue no horário agendado. Tolerância máxima de 15 minutos.
+• 🧴 Higienização: venha sem maquiagem e sem nenhum produto na área dos olhos.
+• 🔁 Manutenções: cílios com mais de 3 semanas são cobrados como 1ª aplicação.
+• 📅 Cancelamentos: cancelamentos ou reagendamentos com menos de 24h de antecedência têm cobrança de 50% do valor do procedimento.
+Mini formulário (campos):
+1. Como você quer ser chamada? (texto, obrigatório)
+2. Serviço escolhido (select com todos os serviços da seção 5.2, e opção "Ainda não sei, quero uma indicação")
+3. Dia de preferência (date picker, bloquear datas passadas)
+4. Melhor horário (select: Manhã, Tarde, Noite, ou horário específico)
+5. Primeira vez ou manutenção? (rádio: 1ª aplicação / Manutenção até 2 semanas / Manutenção até 3 semanas)
+6. Tem foto de referência? (rádio Sim/Não; se Sim, aviso: "Envie a foto aqui no WhatsApp depois de abrir a conversa")
+7. Observações (textarea, opcional)
+Botão: [Enviar pelo WhatsApp]. Ao clicar, montar a mensagem e abrir https://wa.me/18629558236?text= com texto codificado (encodeURIComponent), por exemplo:
+Olá, Thais! Meu nome é {nome}. Gostaria de agendar: {serviço}. Dia: {data}. Horário: {horário}. Tipo: {tipo}. Foto de referência: {sim/não}. Observações: {obs}.
+Validar campos obrigatórios com mensagens gentis e mostrar um estado de sucesso elegante. Versão em inglês da mensagem quando o site estiver em EN.
+5.9 FAQ
+• Etiqueta: Dúvidas frequentes
+• Título: Tudo o que você precisa saber.
+• Subtítulo: Respostas rápidas para você agendar com tranquilidade.
+• Layout: acordeão elegante (abre um por vez), seta/ícone dourado.
+• Perguntas:
+    1. Quanto tempo dura a aplicação? Varia conforme o estilo escolhido. Combinamos o tempo estimado ao agendar.
+    2. Quanto tempo duram os cílios? Com os cuidados corretos e manutenções em dia, a durabilidade é ótima. As manutenções são recomendadas a cada 2 a 3 semanas.
+    3. Qual estilo é ideal para mim? Na avaliação, analiso o formato dos seus olhos e o seu estilo de vida para indicar o melhor volume.
+    4. Extensão de cílios prejudica os fios naturais? Feita por profissional, com isolamento correto e materiais de qualidade, não. Saúde ocular é prioridade.
+    5. Posso dormir, lavar o rosto e fazer exercícios normalmente? Sim, com orientações simples de cuidado que passo no atendimento.
+    6. Preciso ir sem maquiagem? Sim, venha sem maquiagem e sem produto na área dos olhos.
+    7. Qual a tolerância de atraso? O máximo é 15 minutos.
+    8. E se eu precisar cancelar ou reagendar? Avise com no mínimo 24h de antecedência. Abaixo disso, é cobrado 50% do valor do procedimento.
+    9. Quando devo fazer a manutenção? Entre 2 e 3 semanas. Com mais de 3 semanas, o valor é cobrado como 1ª aplicação.
+    10. O curso é para iniciantes? Sim, você aprende do zero, em 2 dias, com prática em modelo.
+    11. O curso é presencial? Onde? Sim, em Newark, NJ, em grupo de até 4 pessoas ou VIP.
+    12. O que está incluso no curso? Kit de material personalizado, apostila, certificado, coffee break e 6 meses de assistência pós-curso, além de bônus.
+• Botão final: [Falar com a Thais no WhatsApp]
+(Se alguma resposta não corresponder à realidade do studio, a IA deve deixar os textos editáveis em um único arquivo de dados.)
+5.10 Rodapé
+• Fundo bege mais escuro (#F0E8DC) com divisor dourado no topo e símbolo de cílio centralizado.
+• Coluna 1: logo + frase: "Cílios, cuidado e transformação em Newark, NJ."
+• Coluna 2 (menu): Serviços · Galeria · Sobre · Mentoria · Local · Agendar · FAQ
+• Coluna 3 (contato): WhatsApp +1 (862) 955-8236 · Instagram @studio_thaisbraga · 269 Oliver St, Newark, NJ 07105
+• Botão: [Agendar pelo WhatsApp]
+• Linha final: © 2026 Studio Thais Braga. Todos os direitos reservados. Premiada Lash Designer Empreendedora 2023, America Star Magazine.
+6. Responsividade
+• Mobile first, breakpoints 360 / 768 / 1024 / 1280.
+• Sem rolagem horizontal. Botões com área de toque mínima de 48px.
+• Hero empilhado no mobile (texto, foto, cards). Galeria 2 colunas, carrossel com swipe, tabelas de preço viram cards empilhados.
+• Tipografia fluida com clamp(). Imagens com loading="lazy", object-fit: cover e proporções fixas para evitar saltos de layout.
+7. Requisitos funcionais
+1. Idioma PT/EN: dicionário de textos (i18n) com chaves por seção; seletor no cabeçalho; salvar escolha em localStorage (com try/catch); atributo lang do HTML atualizado.
+2. Lightbox reutilizável para a galeria e o carrossel (teclado, swipe, foco acessível).
+3. Carrossel infinito com loop contínuo, autoplay lento, pausa no hover/toque, arrastar no mobile.
+4. Marquee dourado em loop infinito (CSS).
+5. Formulário que gera a mensagem e abre o WhatsApp.
+6. Acordeão de FAQ acessível (aria-expanded).
+7. Rolagem suave entre âncoras e destaque do item ativo no menu.
+8. Botão flutuante do WhatsApp.
+9. SEO: título "Thais Braga | Extensão de Cílios e Curso Lash Designer em Newark, NJ"; meta description; Open Graph com foto dela; dados estruturados BeautySalon/LocalBusiness com endereço e Instagram; HTML semântico, um único H1.
+10. Acessibilidade: contraste adequado (texto escuro sobre bege), alt em imagens, foco visível, navegação por teclado.
+11. Desempenho: imagens WebP já fornecidas, lazy loading, fontes com display=swap.
+8. Embeds do Instagram (reels e posts, sem capa)
+Usar o embed oficial do Instagram (https://www.instagram.com/reel/<ID>/embed em um iframe) para tocar o vídeo dentro do site:
+• Reels: Deh7RG5zPn5, DeP7s3ATF-4 e o post do espaço: DYai_nezU0l.
+• Para ficar sem capa/legenda, não usar data-instgrm-captioned, e colocar o iframe dentro de um contêiner com overflow:hidden, proporção 9:16, cantos arredondados e borda dourada fina, cortando o cabeçalho e o rodapé do embed com margem negativa. Se o Instagram bloquear o embed, mostrar um cartão elegante de fallback com o botão [Assistir no Instagram].
+• Cada embed com loading="lazy" e largura máxima de 340px centralizada.
+9. Pendências a confirmar com a cliente
+• Foto da seção "Sobre": o link do Instagram enviado estava cortado e não é uma imagem direta. Enviar a URL direta da imagem (WebP/JPG) ou hospedar a foto.
+• Moeda: os preços estão em R$ e o studio fica nos EUA. Confirmar se deve exibir em R$ ou US$ (manter a moeda configurável).
+• Volume Light: a descrição original era igual à do Brasileiro; o texto aqui é uma sugestão.
+• Depoimentos: substituir os exemplos por feedbacks reais.
+• Tempo de vida da bio: os textos enviados citam 6, 8 e 9 anos. Neste documento: "+9 anos na beleza", "há seis anos como Lash Designer" e carreira nos EUA desde 2017. Confirmar.
+• FAQ e itens do studio (segurança, climatização, tecnologia): confirmar se refletem a realidade.
+10. Critérios de aceite
+• Todas as 10 seções presentes, na ordem, com título e subtítulo impactantes.
+• Alternância PT/EN funcionando em 100% dos textos.
+• Todos os botões de agendar abrem o WhatsApp +1 (862) 955-8236; somente o da mentoria abre https://studiothaisbraga.com/.
+• Galeria e carrossel abrem fotos expandidas; carrossel em loop infinito.
+• Reels incorporados e tocando no próprio site.
+• Mapa do Google funcionando com o botão "Como chegar".
+• Visual: bege quase branco, dourado metálico, rosa sutil, símbolo de cílio discreto, sensação de luxo e delicadeza.
+• Perfeito em celular, tablet e desktop.
+11. Prompt final para colar no Google AI Studio
+Crie um site one-page de luxo para o Studio Thais Braga (Lash Designer em Newark, NJ), em português com alternância para inglês no cabeçalho, seguindo integralmente o PRD acima. Estilo: bege claro quase branco, detalhes dourados com efeito metálico, toques sutis de rosa elegante, símbolo discreto de cílio, tipografia serifada elegante nos títulos. Seções na ordem: Hero, Serviços (com preços), Galeria com lightbox, Sobre (com reels do Instagram), Mentoria/Curso (marquee, carrossel infinito com lightbox, reels), Feedbacks (5 estrelas), Local/Studio (mapa e reels), Agendamento (regras + formulário que envia ao WhatsApp), FAQ e Rodapé. Todo botão de agendar abre o WhatsApp +1 (862) 955-8236; somente o botão da mentoria abre https://studiothaisbraga.com/. 100% responsivo, acessível e com SEO. Entregue o código completo e pronto para uso.
